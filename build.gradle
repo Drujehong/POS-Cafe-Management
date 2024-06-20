@@ -3,7 +3,7 @@ plugins {
     id 'application'
 }
 
-mainClassName = 'POS.Main'
+mainClassName = 'cafe.Main'
 
 task openProjectFolder {
     group = "Directories"
