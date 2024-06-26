@@ -4,14 +4,16 @@
  */
 package gui;
 
-import java.math.BigDecimal;
 import domain.Staff;
+import java.util.Collection;
 
 /**
  *
  * @author Andrew John
  */
 public class StaffEditor extends javax.swing.JDialog {
+    
+    private static dao.StaffCollectionsDAO staffDAO;
 
     /**
      * Creates new form StaffEditor
@@ -19,6 +21,15 @@ public class StaffEditor extends javax.swing.JDialog {
     public StaffEditor(java.awt.Frame parent, boolean modal, Staff staff) {
         super(parent, modal);
         initComponents();
+        
+        staffDAO = new dao.StaffCollectionsDAO();
+        
+        if(staff != null) {
+            idTxtField.setText(staff.getStaffId());
+            firstNameTxtField.setText(staff.getFirstName());
+            surnameTxtField.setText(staff.getLastName());
+        }
+        
     }
 
     /**
@@ -30,21 +41,125 @@ public class StaffEditor extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        staffEditorLbl = new javax.swing.JLabel();
+        idLbl = new javax.swing.JLabel();
+        idTxtField = new javax.swing.JTextField();
+        firstNameLbl = new javax.swing.JLabel();
+        firstNameTxtField = new javax.swing.JTextField();
+        surnameLbl = new javax.swing.JLabel();
+        surnameTxtField = new javax.swing.JTextField();
+        saveBtn = new javax.swing.JButton();
+        cancelBtn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        staffEditorLbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        staffEditorLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        staffEditorLbl.setText("Staff Editor");
+
+        idLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        idLbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        idLbl.setText("ID:");
+
+        firstNameLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        firstNameLbl.setText("First Name:");
+
+        firstNameTxtField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstNameTxtFieldActionPerformed(evt);
+            }
+        });
+
+        surnameLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        surnameLbl.setText("Surname:");
+
+        saveBtn.setText("Save");
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveBtnActionPerformed(evt);
+            }
+        });
+
+        cancelBtn.setText("Cancel");
+        cancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(staffEditorLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(surnameLbl)
+                            .addComponent(firstNameLbl)
+                            .addComponent(idLbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(idTxtField)
+                            .addComponent(firstNameTxtField)
+                            .addComponent(surnameTxtField, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(cancelBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(staffEditorLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idLbl)
+                    .addComponent(idTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(firstNameTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(firstNameLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(surnameLbl)
+                    .addComponent(surnameTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cancelBtn)
+                    .addComponent(saveBtn))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void firstNameTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTxtFieldActionPerformed
+        // IGNORE
+    }//GEN-LAST:event_firstNameTxtFieldActionPerformed
+
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+        String staffId = idTxtField.getText();
+        String firstName = firstNameTxtField.getText();
+        String lastName = surnameTxtField.getText();
+        
+        Staff newStaff = new Staff(staffId, firstName, lastName);
+        staffDAO.saveStaff(newStaff);
+        
+        this.dispose();
+    }//GEN-LAST:event_saveBtnActionPerformed
+
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_cancelBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,5 +204,14 @@ public class StaffEditor extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cancelBtn;
+    private javax.swing.JLabel firstNameLbl;
+    private javax.swing.JTextField firstNameTxtField;
+    private javax.swing.JLabel idLbl;
+    private javax.swing.JTextField idTxtField;
+    private javax.swing.JButton saveBtn;
+    private javax.swing.JLabel staffEditorLbl;
+    private javax.swing.JLabel surnameLbl;
+    private javax.swing.JTextField surnameTxtField;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,7 +4,6 @@
  */
 package domain;
 
-import java.math.BigDecimal;
 
 /**
  *
@@ -15,8 +14,8 @@ public class Staff {
     /**
      * Private data fields
      */
-    private Integer staffId;
-    private String surname;
+    private String staffId;
+    private String firstName;
     private String lastName;
 
     /**
@@ -29,12 +28,12 @@ public class Staff {
      * Constructor for Staff
      *
      * @param staffId
-     * @param surname
+     * @param firstName
      * @param lastName
      */
-    public Staff(Integer staffId, String surname, String lastName) {
+    public Staff(String staffId, String firstName, String lastName) {
         this.staffId = staffId;
-        this.surname = surname;
+        this.firstName = firstName;
         this.lastName = lastName;
     }
 
@@ -43,17 +42,17 @@ public class Staff {
      *
      * @return the staff ID as an Integer.
      */
-    public Integer getStaffId() {
+    public String getStaffId() {
         return staffId;
     }
 
     /**
      * Gets the surname.
      *
-     * @return the surname as a String.
+     * @return the first name as a String.
      */
-    public String getSurname() {
-        return surname;
+    public String getFirstName() {
+        return firstName;
     }
 
     /**
@@ -70,17 +69,17 @@ public class Staff {
      *
      * @param staffId the staff ID to set as an Integer.
      */
-    public void setStaffId(Integer staffId) {
+    public void setStaffId(String staffId) {
         this.staffId = staffId;
     }
 
     /**
      * Sets the surname.
      *
-     * @param surname the surname to set as a String.
+     * @param firstName the surname to set as a String.
      */
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     /**
@@ -90,6 +89,11 @@ public class Staff {
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+    
+    @Override
+    public String toString() {
+        return "Staff ID: " + staffId + ", Last Name: " + lastName;
     }
 
 }
