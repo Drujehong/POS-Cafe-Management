@@ -8,12 +8,12 @@ package gui;
  *
  * @author Andrew John
  */
-public class StaffManager extends javax.swing.JFrame {
+public class ProductManager extends javax.swing.JFrame {
 
     /**
-     * Creates new form StaffManager
+     * Creates new form ProductManager
      */
-    public StaffManager() {
+    public ProductManager() {
         initComponents();
     }
 
@@ -26,30 +26,30 @@ public class StaffManager extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        staffManagerLbl = new javax.swing.JLabel();
-        viewStaffBtn = new javax.swing.JButton();
-        addStaffBtn = new javax.swing.JButton();
+        productManagerLbl = new javax.swing.JLabel();
+        viewProductBtn = new javax.swing.JButton();
+        addProductBtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        staffManagerLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        staffManagerLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        staffManagerLbl.setText("Staff Manager");
+        productManagerLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        productManagerLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        productManagerLbl.setText("Product Manager");
 
-        viewStaffBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        viewStaffBtn.setText("View Staff");
-        viewStaffBtn.addActionListener(new java.awt.event.ActionListener() {
+        viewProductBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        viewProductBtn.setText("View Product");
+        viewProductBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewStaffBtnActionPerformed(evt);
+                viewProductBtnActionPerformed(evt);
             }
         });
 
-        addStaffBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        addStaffBtn.setText("Add Staff");
-        addStaffBtn.addActionListener(new java.awt.event.ActionListener() {
+        addProductBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        addProductBtn.setText("Add Product");
+        addProductBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addStaffBtnActionPerformed(evt);
+                addProductBtnActionPerformed(evt);
             }
         });
 
@@ -69,39 +69,39 @@ public class StaffManager extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addStaffBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(viewStaffBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staffManagerLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE))
+                    .addComponent(addProductBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viewProductBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(productManagerLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(staffManagerLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(productManagerLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewProductBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(viewStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addProductBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(addStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void viewStaffBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStaffBtnActionPerformed
-        StaffViewer viewerDialog = new StaffViewer(this, true);
+    private void viewProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewProductBtnActionPerformed
+        ProductViewer viewerDialog = new ProductViewer(this, true);
         viewerDialog.setLocationRelativeTo(null);
         viewerDialog.setVisible(true);
-    }//GEN-LAST:event_viewStaffBtnActionPerformed
+    }//GEN-LAST:event_viewProductBtnActionPerformed
 
-    private void addStaffBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStaffBtnActionPerformed
-        StaffEditor editorDialog = new StaffEditor(this, true, null);
+    private void addProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductBtnActionPerformed
+        ProductEditor editorDialog = new ProductEditor(this, true, null);
         editorDialog.setLocationRelativeTo(null);
         editorDialog.setVisible(true);
-    }//GEN-LAST:event_addStaffBtnActionPerformed
+    }//GEN-LAST:event_addProductBtnActionPerformed
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         this.dispose();
@@ -124,28 +124,28 @@ public class StaffManager extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StaffManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProductManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StaffManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProductManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StaffManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProductManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StaffManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProductManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StaffManager().setVisible(true);
+                new ProductManager().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addStaffBtn;
+    private javax.swing.JButton addProductBtn;
     private javax.swing.JButton exitBtn;
-    private javax.swing.JLabel staffManagerLbl;
-    private javax.swing.JButton viewStaffBtn;
+    private javax.swing.JLabel productManagerLbl;
+    private javax.swing.JButton viewProductBtn;
     // End of variables declaration//GEN-END:variables
 }

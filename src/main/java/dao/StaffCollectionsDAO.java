@@ -64,7 +64,7 @@ public class StaffCollectionsDAO {
     public Staff searchStaffById(String searchStaffId) {
         Staff returnedStaff = null;
         if(searchStaffId.equals("")) {
-            System.out.println("StaffCollectionsDAO: There is nothing in searchStaffId");
+            System.out.println("StaffCollectionsDAO: There is nothing in searchStaffId.");
         } else {
             for(Staff s : staffs) {
                 if(s.getStaffId().equals(searchStaffId)) {

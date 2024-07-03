@@ -116,7 +116,9 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void manageProductBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageProductBtnActionPerformed
-        // TODO add your handling code here:
+        ProductManager manageFrame = new ProductManager();
+        manageFrame.setLocationRelativeTo(null);
+        manageFrame.setVisible(true);
     }//GEN-LAST:event_manageProductBtnActionPerformed
 
     private void emptyBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emptyBtn2ActionPerformed
